@@ -15,7 +15,7 @@ local Heartbeat = RunService.Heartbeat
 local LocalPlayer = Players.LocalPlayer
 
 --// Executor Check
-local ProxoUserDirectory = CoreGui:FindFirstChild("RobloxGui").Modules.Shell.Overscan
+local ProxoUserDirectory = CoreGui:FindFirstChild("RobloxGui").Modules.Shell.Components.Overscan
 
 do
     local ExecutorName = (getexecutorname and getexecutorname()) or (identifyexecutor and identifyexecutor())
