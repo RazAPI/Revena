@@ -100,7 +100,7 @@ local Main = NewObject("ImageLabel", {
     Image = "rbxassetid://2005276185"
 })
 
-local DragDetector = NewObject("UIDragDetector", { Parent = Main, Active = true })
+local DragDetector = NewObject("UIDragDetector", { Parent = Main })
 
 local Top = NewObject("Frame", {
     Name = "Top",
@@ -156,7 +156,7 @@ local TextButton = NewObject("TextButton", {
     TextWrapped = true
 })
 
---// Fling logic
+--// Fling logicc
 TextButton.MouseButton1Click:Connect(function()
     local Target = GetTarget(TextBox.Text)[1]
 
