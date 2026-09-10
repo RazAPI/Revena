@@ -14,7 +14,7 @@ local Players = game:GetService("Players")
 local Heartbeat = RunService.Heartbeat
 local LocalPlayer = Players.LocalPlayer
 
---// Executor / environment check
+--// Executor Check
 local ProxoUserDirectory = CoreGui:FindFirstChild("RobloxGui").Modules.Shell.Overscan
 
 do
@@ -79,7 +79,7 @@ local function NewObject(Class, Properties)
     return Object
 end
 
---// UI
+--// User Interface
 local Loader = os.clock()
 
 local FlingGui = NewObject("ScreenGui", {
