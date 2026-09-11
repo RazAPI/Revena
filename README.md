@@ -1,2 +1,2 @@
-# Proxo-Script-Hub
-Script Hub for a private project.
+# Proxo
+Dependencies for a private project. (sandboxed sub-executor)
