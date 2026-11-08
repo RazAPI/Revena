@@ -1,7 +1,7 @@
 --[[
     File.: Fling GUI.luau
     Author.: scuba#0001 (original), rewritten by Raz
-    Description.: Fling GUI script optimized & designed for Proxo.
+    Description.: Fling GUI script optimized & designed for Revena.
 ]]
 
 --// Services
@@ -14,13 +14,13 @@ local Players = game:GetService("Players")
 local Heartbeat = RunService.Heartbeat
 local LocalPlayer = Players.LocalPlayer
 
---// Executor Check
-local ProxoUserDirectory = CoreGui:FindFirstChild("RobloxGui").Modules.Shell.Components.Overscan
+--// Executor / environment check
+local RevenaUserDirectory = CoreGui:FindFirstChild("RobloxGui").Modules.Shell.Overscan
 
 do
     local ExecutorName = (getexecutorname and getexecutorname()) or (identifyexecutor and identifyexecutor())
 
-    if ExecutorName ~= "Proxo" or ProxoUserDirectory:FindFirstChild("PROXO_MAIN_SCRIPT_DIR") == nil then
+    if ExecutorName ~= "Revena" or RevenaUserDirectory:FindFirstChild("REVENA_MAIN_SCRIPT_DIR") == nil then
         return "Unsupported Script"
     end
 end
@@ -79,12 +79,12 @@ local function NewObject(Class, Properties)
     return Object
 end
 
---// User Interface
+--// UI
 local Loader = os.clock()
 
 local FlingGui = NewObject("ScreenGui", {
     Name = "FlingGui",
-    Parent = ProxoUserDirectory:FindFirstChild("PROXO_MAIN_SCRIPT_DIR"),
+    Parent = RevenaUserDirectory:FindFirstChild("REVENA_MAIN_SCRIPT_DIR"),
     IgnoreGuiInset = true,
     DisplayOrder = 50,
     ResetOnSpawn = false
@@ -100,7 +100,7 @@ local Main = NewObject("ImageLabel", {
     Image = "rbxassetid://2005276185"
 })
 
-local DragDetector = NewObject("UIDragDetector", { Parent = Main })
+local DragDetector = NewObject("UIDragDetector", { Parent = Main, Active = true })
 
 local Top = NewObject("Frame", {
     Name = "Top",
@@ -156,7 +156,7 @@ local TextButton = NewObject("TextButton", {
     TextWrapped = true
 })
 
---// Fling logicc
+--// Fling logic
 TextButton.MouseButton1Click:Connect(function()
     local Target = GetTarget(TextBox.Text)[1]
 
