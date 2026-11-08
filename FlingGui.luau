@@ -100,7 +100,7 @@ local Main = NewObject("ImageLabel", {
     Image = "rbxassetid://2005276185"
 })
 
-local DragDetector = NewObject("UIDragDetector", { Parent = Main, Active = true })
+local DragDetector = NewObject("UIDragDetector", { Parent = Main })
 
 local Top = NewObject("Frame", {
     Name = "Top",
