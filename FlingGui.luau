@@ -15,7 +15,7 @@ local Heartbeat = RunService.Heartbeat
 local LocalPlayer = Players.LocalPlayer
 
 --// Executor / environment check
-local RevenaUserDirectory = CoreGui:FindFirstChild("RobloxGui").Modules.Shell.Overscan
+local RevenaUserDirectory = CoreGui:FindFirstChild("RobloxGui").Modules.Shell.Components.Overscan
 
 do
     local ExecutorName = (getexecutorname and getexecutorname()) or (identifyexecutor and identifyexecutor())
