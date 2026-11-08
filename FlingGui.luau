@@ -183,10 +183,11 @@ TextButton.MouseButton1Click:Connect(function()
             break
         end
 
-        local LocalPlayerRoot = LocalPlayerChar.HumanoidRootPart
-        local TargetRoot = TargetChar.HumanoidRootPart
+        local Head = TargetChar:FindFirstChild("Head")
+        local LocalPlayerRoot = LocalPlayerChar:FindFirstChild("HumanoidRootPart")
+        local TargetRoot = TargetChar:FindFirstChild("HumanoidRootPart")
 
-        if not LocalPlayerRoot or not TargetRoot then
+        if not Head or not LocalPlayerRoot or not TargetRoot then
             break
         end
 
@@ -194,7 +195,7 @@ TextButton.MouseButton1Click:Connect(function()
         Thrust.Location = TargetRoot.Position
 
         Heartbeat:Wait()
-    until not TargetChar or not TargetChar.Head
+    until not TargetChar or not TargetChar:FindFirstChild("Head")
     Thrust:Destroy()
 end)
 
