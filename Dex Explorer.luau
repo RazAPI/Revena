@@ -6494,7 +6494,7 @@ local EmbeddedModules = {
 
 				funcs.ShowAndFocus = function(self,data)
 					static.ShowWindow(self,data)
-					service.RunService.RenderStepped:wait()
+					service.RunService.RenderStepped:Wait()
 					self:Focus()
 				end
 
@@ -11647,7 +11647,7 @@ local Settings = {}
 local Apps = {}
 local env = {}
 
-local plr = service.Players.LocalPlayer or service.Players.PlayerAdded:wait()
+local plr = service.Players.LocalPlayer or service.Players.PlayerAdded:Wait()
 
 local create = function(data)
 	local insts = {}
